@@ -1,4 +1,21 @@
 
+function atbash_cipher(texto) {
+  let alfabeto = 'abcdefghijklmnopqrstuvwxyz';
+  texto = texto.toLowerCase();
+  let cifrado = '';
+  for (let i = 0; i < texto.length; i++) {
+    let letra = texto[i];
+    if (alfabeto.includes(letra)) {
+      let letra_cifrada = alfabeto.charAt(25 - alfabeto.indexOf(letra));
+      cifrado += letra_cifrada;
+    } else {
+      cifrado += letra;
+    }
+  }
+  return cifrado;
+}
+
+
 function contarLetras(text) {
     // Crie um objeto vazio para armazenar o número de ocorrências de cada letra
     let counts = {};
